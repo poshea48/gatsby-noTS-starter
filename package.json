@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "pauls-gatsby-starter",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My Starter for Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Paul O'Shea <osheapaulfe@gmail.com>",
   "dependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
@@ -37,6 +37,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.17.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.2",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -51,6 +53,11 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
