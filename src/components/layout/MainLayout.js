@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ThemeProvider } from 'emotion-theming';
-import { Global } from '@emotion/core';
+import { Global, css } from '@emotion/core';
 import { useStaticQuery, graphql } from 'gatsby';
-import globalTheme from './GlobalStyles';
+import globalTheme from './globalStyles';
 
 import theme from '../../../config/theme';
 // import Header from '../header'
@@ -23,7 +23,20 @@ const MainLayout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <React.StrictMode>
-        <Global styles={globalTheme(theme)} />
+        <Global
+          styles={css`
+            ${globalTheme()}
+            a {
+              color: ${theme.colors.black.blue};
+            }
+            a:hover {
+              color: ${theme.colors.primary.light};
+            }
+            h1 {
+              font-family: ${theme.fontFamily.heading};
+            }
+          `}
+        />
         <SEO title={site.siteMetadata.title} />
         {children}
       </React.StrictMode>
